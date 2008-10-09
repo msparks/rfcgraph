@@ -119,7 +119,9 @@ def create_graph(metadata, output_file, format):
     output_file: file to write
     format: format to use for writing
   """
-  graph = pydot.Dot(graph_name="RFCs", type="digraph")
+  title = '"Graph of RFCs and their relationships"'
+  graph = pydot.Dot(graph_name=title,
+                    type="digraph")
   nodes = _make_nodes(metadata)
   _add_nodes(metadata, graph, nodes)
   graph.set("overlap", "false")
